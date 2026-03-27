@@ -2,9 +2,9 @@ package electronique;
 
 public abstract class Composant {
 
-    public Composant() {}
+    public Composant() {
 
-    public double calculerResistance() {
-        return 0;
     }
+
+    public abstract double calculerResistance();
 }

@@ -5,6 +5,7 @@ public class Resistance extends Composant {
     private double resistance;
 
     public Resistance(double resistance) {
+        super();
         setResistance(resistance);
     }
 

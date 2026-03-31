@@ -2,31 +2,31 @@ package electronique;
 
 public class Resistance extends Composant {
 
-    private double resistance;
+    private double valResistance;
 
     public Resistance(double resistance) {
         super();
-        setResistance(resistance);
+        setValResistance(resistance);
     }
 
-    public double getResistance() {
-        return resistance;
+    public double getValResistance() {
+        return valResistance;
     }
 
-    public void setResistance(double resistance) {
+    public void setValResistance(double valResistance) {
         if(!validerResistance()) {
             throw new IllegalArgumentException("Resistance n'est pas valide.");
         }
-        this.resistance = resistance;
+        this.valResistance = valResistance;
     }
 
     public boolean validerResistance() {
-        return !(resistance < 0);
+        return !(valResistance < 0);
     }
 
 
     @Override
     public double calculerResistance() {
-        return getResistance();
+        return valResistance;
     }
 }

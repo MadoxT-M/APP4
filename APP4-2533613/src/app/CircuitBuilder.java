@@ -1,11 +1,14 @@
 package app;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import electronique.CircuitParallele;
 import electronique.CircuitSerie;
 import electronique.Composant;
 import electronique.Resistance;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,5 +40,12 @@ public class CircuitBuilder {
             return new CircuitSerie(composants);
         }
         throw new IllegalArgumentException("Invalid type: " + type);
+    }
+
+    private final ObjectMapper mapper = new ObjectMapper();
+
+    public Composant construireCircuit(String cheminFichier) throws IOException {
+        JsonNode node = mapper.readTree(new File(cheminFichier));
+        return lireCircuit(node);
     }
 }

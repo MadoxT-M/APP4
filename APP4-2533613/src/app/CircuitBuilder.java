@@ -14,6 +14,13 @@ import java.util.List;
 
 public class CircuitBuilder {
 
+    private final ObjectMapper mapper = new ObjectMapper();
+
+    public Composant construireCircuit(String cheminFichier) throws IOException {
+        JsonNode node = mapper.readTree(new File(cheminFichier));
+        return lireCircuit(node);
+    }
+
     private Composant lireCircuit(JsonNode node) {
         String type = node.get("type").asText();
 
@@ -42,10 +49,5 @@ public class CircuitBuilder {
         throw new IllegalArgumentException("Invalid type: " + type);
     }
 
-    private final ObjectMapper mapper = new ObjectMapper();
 
-    public Composant construireCircuit(String cheminFichier) throws IOException {
-        JsonNode node = mapper.readTree(new File(cheminFichier));
-        return lireCircuit(node);
-    }
 }

@@ -10,7 +10,10 @@ public class CircuitParallele extends Circuit {
     public double calculerResistance() {
         double resistanceParallelle = 0.0;
         for (Composant c : composants) {
-            resistanceParallelle += 1/c.calculerResistance();
+            double r =  c.calculerResistance();
+            if(r<=0){throw new ArithmeticException("Division par cero");}
+
+            resistanceParallelle += 1/r;
         }
         return 1/ resistanceParallelle;
     }

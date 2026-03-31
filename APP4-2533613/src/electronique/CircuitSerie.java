@@ -12,10 +12,10 @@ public class CircuitSerie extends Circuit{
 
     @Override
     public double calculerResistance() {
-        double totalResistance = 0.0;
+        double resistanceSerie = 0.0;
         for(Composant c : composants) {
-            totalResistance += c.calculerResistance();
+            resistanceSerie += c.calculerResistance();
         }
-        return totalResistance;
+        return resistanceSerie;
     }
 }

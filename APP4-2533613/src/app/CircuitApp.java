@@ -51,7 +51,7 @@ public class CircuitApp {
     }
 
     private static int lireChoix(int choixMax){
-        int choix= -1;
+        int choix;
 
         while(true) {
             System.out.print("Votre choix : ");

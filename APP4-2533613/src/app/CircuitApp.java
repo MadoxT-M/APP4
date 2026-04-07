@@ -22,6 +22,8 @@ public class CircuitApp {
                 return;
             }
 
+            System.out.println();
+            System.out.println("Bienvenue au programme !");
             System.out.println("--------- Sélectionner un circuit ---------");
             for(int i = 0; i < fichiers.length; i++) {
                 System.out.println("[" + (i+1) + "] " + fichiers[i].getName());

@@ -18,7 +18,8 @@ public class CircuitBuilder {
 
     public Composant construireCircuit(String cheminFichier) throws IOException {
         JsonNode node = mapper.readTree(new File(cheminFichier));
-        return lireCircuit(node);
+        JsonNode circuitNode = node.get("circuit");
+        return lireCircuit(circuitNode);
     }
 
     private Composant lireCircuit(JsonNode node) {
@@ -28,7 +29,7 @@ public class CircuitBuilder {
 
             return new Resistance(node.get("valeur").asDouble());
 
-        } else if ("parallelle".equals(type)) {
+        } else if ("parallele".equals(type)) {
 
             List<Composant> composants = new ArrayList<>();
 

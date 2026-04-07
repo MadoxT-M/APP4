@@ -26,7 +26,7 @@ public class CircuitBuilder {
 
         if ("resistance".equals(type)) {
 
-            return new Resistance(node.get("value").asDouble());
+            return new Resistance(node.get("valeur").asDouble());
 
         } else if ("parallelle".equals(type)) {
 

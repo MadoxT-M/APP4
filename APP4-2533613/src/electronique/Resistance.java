@@ -13,11 +13,11 @@ public class Resistance extends Composant {
         return valResistance;
     }
 
-    public void setValResistance(double valResistance) {
+    public double setValResistance(double valResistance) {
         if(!validerResistance()) {
             throw new IllegalArgumentException("Resistance n'est pas valide.");
         }
-        this.valResistance = valResistance;
+        return this.valResistance= valResistance;
     }
 
     public boolean validerResistance() {
@@ -27,6 +27,6 @@ public class Resistance extends Composant {
 
     @Override
     public double calculerResistance() {
-        return valResistance;
+        return setValResistance(valResistance);
     }
 }

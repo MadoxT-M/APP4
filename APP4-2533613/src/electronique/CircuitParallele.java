@@ -11,7 +11,7 @@ public class CircuitParallele extends Circuit {
         double resistanceParallelle = 0.0;
         for (Composant c : composants) {
             double r =  c.calculerResistance();
-            if(r<=0){throw new ArithmeticException("Division par cero");}
+            if(r==0){throw new ArithmeticException("Division par cero");}
 
             resistanceParallelle += 1/r;
         }

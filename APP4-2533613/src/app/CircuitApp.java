@@ -14,7 +14,7 @@ public class CircuitApp {
         boolean continuer = true;
 
         while (continuer) {
-            File donnees = new File("APP4-2533613/donnees/fichiers_json");
+            File donnees = new File("APP4-2533613/src/donnees/fichiers_json");
             File[] fichiers = donnees.listFiles((dir, name) -> name.endsWith(".json"));
 
             if(fichiers == null || fichiers.length == 0) {

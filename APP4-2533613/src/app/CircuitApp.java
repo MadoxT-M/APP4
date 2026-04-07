@@ -15,7 +15,7 @@ public class CircuitApp {
 
         while (continuer) {
             File donnees = new File("APP4-2533613/src/donnees/fichiers_json");
-            File[] fichiers = donnees.listFiles((dir, name) -> name.endsWith(".json"));
+            File[] fichiers = donnees.listFiles((fichier, name) -> name.endsWith(".json"));
 
             if(fichiers == null || fichiers.length == 0) {
                 System.out.println("Aucun fichier JSON trouvé");

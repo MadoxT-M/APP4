@@ -22,7 +22,7 @@ public class CircuitApp {
                 return;
             }
 
-            System.out.println("--------- Sélectionnez un circuit ---------");
+            System.out.println("--------- Sélectionner un circuit ---------");
             for(int i = 0; i < fichiers.length; i++) {
                 System.out.println("[" + (i+1) + "] " + fichiers[i].getName());
             }
@@ -46,7 +46,7 @@ public class CircuitApp {
             continuer = finCycle();
         }
 
-        System.out.println("Programme terminé.");
+        System.out.println("Programme terminé correctement !");
 
     }
 
